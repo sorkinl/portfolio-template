@@ -28,10 +28,9 @@ function App() {
           <Vanta />
         </div>
       ))
-    : (returnValue = (
+    : (returnValue = 
       <div className="terminal"><div className="innerTerminal">
-   
-      <ReactTerminal commands={commands} showControlButtons={false}theme={"dark"}welcomeMessage={<Typing>
+      <ReactTerminal commands={commands} showControlButtons={false} theme={"dark"} welcomeMessage={<Typing>
       <span>Wake up, Neo...</span>
       <Typing.Delay ms={3000}/>
       <Typing.Backspace count={15}/>
@@ -43,7 +42,7 @@ function App() {
       <Typing.Delay ms={2000}/>
     </Typing>}/>
     </div></div>
-    ));
+    );
   return returnValue
 }
 

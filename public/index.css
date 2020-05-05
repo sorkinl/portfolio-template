@@ -241,6 +241,11 @@ body {
     cursor:pointer;
     color:rgb(255, 50, 50);
     background:#fff;
+    transition: none;
+}
+.btn_one:active{
+    color:#fff;
+    background:rgb(255, 50, 50);
 }
 .btn_two {
     font-size:18px;

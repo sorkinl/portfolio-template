@@ -6,10 +6,15 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "firebase": "^7.14.2",
     "jquery": "^3.5.0",
+    "node-sass": "^4.14.0",
+    "nodemailer-smtp-transport": "^2.7.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "react-terminal": "^1.0.10",
     "react-typing-animation": "^1.6.2",
     "three": "^0.116.1",
     "vanta": "^0.5.15"
@@ -35,6 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
