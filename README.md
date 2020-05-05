@@ -1,3 +1,6 @@
+# Project currently has JQuery code, because I am comfortable with working with it. I realize that React and jquery is a bad practice, and I will refactor the code when I feel like it is time to do so.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
