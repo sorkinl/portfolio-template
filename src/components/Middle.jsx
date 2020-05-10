@@ -1,8 +1,11 @@
 import React from "react";
 import $ from 'jquery';
+import About from "./About";
+import classNames from 'classnames';
 
 const Middle = () => {
-
+const [aboutShow, setAboutShow] = React.useState(false);
+const [slideInLeft, setSlideInLeft] = React.useState(false);
     function showwork(){
         $("#work_container").css("display","inherit");
         $("#work_container").addClass("animated slideInRight");
@@ -12,11 +15,16 @@ const Middle = () => {
         console.log("Button");
     }
     function showabout(){
-        $("#about_container").css("display","inherit");
+      setAboutShow(true);
+      setSlideInLeft(true);
+      setTimeout(() => {
+        setSlideInLeft(false);
+      }, 800);
+        /* $("#about_container").css("display","inherit");
         $("#about_container").addClass("animated slideInLeft");
         setTimeout(function(){
             $("#about_container").removeClass("animated slideInLeft");
-        },800);
+        },800); */
     }
     function showcontact(){
         $("#contact_container").css("display","inherit");
@@ -27,6 +35,7 @@ const Middle = () => {
     }
     
   return (
+    <div>
     <div>
       <a
         id="about"
@@ -103,6 +112,8 @@ const Middle = () => {
           </tbody>
         </table>
       </div>
+    </div>
+    <About slideInLeft={slideInLeft} showAbout={aboutShow} setShowFalse={() => setAboutShow(false)}/>
     </div>
   );
 };

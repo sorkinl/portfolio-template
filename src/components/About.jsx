@@ -1,15 +1,29 @@
 import React from 'react';
+import classNames from "classnames";
 import $ from 'jquery'
 
-const About = () => {
-  function closeabout(){
-    $("#about_container").addClass("animated slideOutLeft");
+const About = ({showAbout, setShowFalse, slideInLeft}) => {
+  const [animated, setAnimated] = React.useState(false);
+  const closeabout = () =>{
+    setAnimated(true);
+    setTimeout(() => {
+      setAnimated(false);
+      setShowFalse()
+    },800);
+    
+    /* $("#about_container").addClass("animated slideOutLeft");
     setTimeout(function(){
         $("#about_container").removeClass("animated slideOutLeft");
         $("#about_container").css("display","none");
-    },800);
+    },800); */
 }
-    return(<div id="about_container" className="container">
+    return(<div id="about_container" className={classNames("container",{
+      animated:animated || slideInLeft,
+      slideOutLeft:animated,
+      slideInLeft: slideInLeft
+    })}
+    style={showAbout?{display: 'inherit'}:{display:'none'}}
+    >
     <div onClick={closeabout}><i className="fas fa-angle-left" /></div>
     <h1>about.</h1>
     <section>
