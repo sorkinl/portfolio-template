@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const WorkTabs = () => {
   const [showProjects, setShowProjects] = useState(false);
-  const [active, setActive] = useState("work");
   const clickHandlerProjects = () => {
     setShowProjects(true);
   };

@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import { Axios } from '../firebase/firebaseConfig'
-import $ from 'jquery';
+import classNames from "classnames";
 
-const Contact = () => {
+const Contact = ({showContact,setShowFalse, slideInUp}) => {
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [message, setMessage] = useState();
+    const [animated, setAnimated] = useState(false);
     
     const validate = () => {
       let emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -46,13 +47,18 @@ const Contact = () => {
     })
   }
   function closecontact(){
-    $("#contact_container").addClass("animated slideOutDown");
-    setTimeout(function(){
-        $("#contact_container").removeClass("animated slideOutDown");
-        $("#contact_container").css("display","none");
-    },800);
+    setAnimated(true);
+    setTimeout(() => {
+      setAnimated(false);
+      setShowFalse()
+    }, 950);
 }
-    return(<div id="contact_container" className="container">
+    return(<div id="contact_container" className={classNames("container", {
+      animated: animated || slideInUp,
+      slideOutDown: animated,
+      slideInUp: slideInUp
+    })}
+    style={showContact?{display: 'inherit'}:{display:'none'}}>
     <div onClick={closecontact}><i className="fas fa-angle-down" /></div>
     <h1>contact.</h1>
     <section>

@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from "classnames";
-import $ from 'jquery'
 
 const About = ({showAbout, setShowFalse, slideInLeft}) => {
   const [animated, setAnimated] = React.useState(false);
@@ -9,13 +8,7 @@ const About = ({showAbout, setShowFalse, slideInLeft}) => {
     setTimeout(() => {
       setAnimated(false);
       setShowFalse()
-    },800);
-    
-    /* $("#about_container").addClass("animated slideOutLeft");
-    setTimeout(function(){
-        $("#about_container").removeClass("animated slideOutLeft");
-        $("#about_container").css("display","none");
-    },800); */
+    },950);
 }
     return(<div id="about_container" className={classNames("container",{
       animated:animated || slideInLeft,

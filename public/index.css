@@ -347,7 +347,7 @@ body {
 	background: rgb(255, 50, 50);
 }
 
-@media (max-width: 800px){ 
+@media (max-width: 500px){ 
     #about {
         display:none;
     }

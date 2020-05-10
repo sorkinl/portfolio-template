@@ -1,17 +1,12 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./index.css";
 import Middle from "./components/Middle";
-import Work from "./components/Work";
-import About from "./components/About";
-import Contact from "./components/Contact";
 import Spinner from "./components/Spinner";
-import Particles from "./components/Particles";
 import Vanta from "./components/Vanta";
 import { ReactTerminal } from "react-terminal";
 import Typing from "react-typing-animation";
 function App() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const commands = {
     follow: () => setShow(true),
     cd: (directory) => `changed path to ${directory}`,
@@ -22,9 +17,6 @@ function App() {
         <div>
           <Spinner />
           <Middle />
-          <Work />
-          <About />
-          <Contact />
           <Vanta />
         </div>
       ))

@@ -1,21 +1,24 @@
 import React from 'react';
-import $ from 'jquery';
+import classNames from 'classnames';
 const Spinner = () => {
+  const [removeClass, setRemoveClass] = React.useState(false);
+  const [addFadeOut, setAddFadeOut] = React.useState(false);
 
     setTimeout(function(){
-        $("#loading").addClass("animated fadeOut");
+        setAddFadeOut(true);
         setTimeout(function(){
-          $("#loading").removeClass("animated fadeOut");
-          $("#loading").css("display","none");
-          $("#box").css("display","none");
-          $("#about").removeClass("animated fadeIn");
-          $("#contact").removeClass("animated fadeIn");
-          $("#work").removeClass("animated fadeIn");
+          setRemoveClass(true);
         },1000);
     },1500);
     
-    return (<div id="loading">
+    return (<div><div id="loading" className={classNames({
+      animated: addFadeOut,
+      fadeOut: addFadeOut
+    })}
+    style={removeClass?{display:'none'}:{}}
+    >
     <div id="spinner"></div>
+</div>
 </div>)
 }
 
