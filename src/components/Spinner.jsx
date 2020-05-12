@@ -3,7 +3,7 @@ import classNames from 'classnames';
 const Spinner = () => {
   const [removeClass, setRemoveClass] = React.useState(false);
   const [addFadeOut, setAddFadeOut] = React.useState(false);
-
+//test commit
     setTimeout(function(){
         setAddFadeOut(true);
         setTimeout(function(){
