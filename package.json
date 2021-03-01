@@ -17,7 +17,7 @@
     "react-scripts": "3.4.1",
     "react-terminal": "^1.0.10",
     "react-typing-animation": "^1.6.2",
-    "three": "^0.116.1",
+    "three": "^0.125.0",
     "vanta": "^0.5.15"
   },
   "scripts": {
